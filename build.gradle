@@ -1,0 +1,23 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        //classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:2.2.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://build.iparse.com/artifactory/libs-release-local'
+            credentials {
+                username "${iparseMavenUsername}"
+                password "${iparseMavenPassword}"
+            }
+        }
+    }
+}
